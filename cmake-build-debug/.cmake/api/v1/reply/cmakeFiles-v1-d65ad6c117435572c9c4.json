@@ -10,7 +10,7 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -151,11 +151,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/raylib/raylib-config-version.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/raylib/raylib-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/raylib/raylib-config.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/raylib/raylib-config.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -184,11 +184,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -232,22 +232,22 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake"
+			"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Targets-release.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug",
-		"source" : "C:/Users/ramir/CLionProjects/map_generation"
+		"build" : "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug",
+		"source" : "C:/Users/kr13193/CLionProjects/map_generation"
 	},
 	"version" : 
 	{

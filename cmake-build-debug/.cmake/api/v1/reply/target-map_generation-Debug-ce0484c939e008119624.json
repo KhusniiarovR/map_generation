@@ -22,9 +22,9 @@
 		],
 		"files" : 
 		[
-			"C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake",
 			"CMakeLists.txt",
-			"C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/raylib/raylib-config.cmake"
+			"C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/raylib/raylib-config.cmake"
 		],
 		"nodes" : 
 		[
@@ -46,7 +46,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 15,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
@@ -94,7 +94,7 @@
 				{
 					"backtrace" : 3,
 					"isSystem" : true,
-					"path" : "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/include"
+					"path" : "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/include"
 				}
 			],
 			"language" : "CXX",
@@ -127,17 +127,17 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "C:\\Users\\ramir\\.vcpkg-clion\\vcpkg\\installed\\x64-windows\\debug\\lib\\raylib.lib",
+				"fragment" : "C:\\Users\\kr13193\\.vcpkg-clion\\vcpkg\\installed\\x64-windows\\debug\\lib\\raylib.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "C:\\Users\\ramir\\.vcpkg-clion\\vcpkg\\installed\\x64-windows\\debug\\lib\\glfw3dll.lib",
+				"fragment" : "C:\\Users\\kr13193\\.vcpkg-clion\\vcpkg\\installed\\x64-windows\\debug\\lib\\glfw3dll.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 7,
-				"fragment" : "C:\\Users\\ramir\\.vcpkg-clion\\vcpkg\\installed\\x64-windows\\debug\\lib\\raylib.lib",
+				"fragment" : "C:\\Users\\kr13193\\.vcpkg-clion\\vcpkg\\installed\\x64-windows\\debug\\lib\\raylib.lib",
 				"role" : "libraries"
 			},
 			{
@@ -162,6 +162,13 @@
 			[
 				0
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
 		}
 	],
 	"sources" : 
@@ -171,6 +178,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "perlin.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

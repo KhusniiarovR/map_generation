@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "map_generation::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-map_generation-Debug-087a6c48d934f8a8f766.json",
+					"jsonFile" : "target-map_generation-Debug-ce0484c939e008119624.json",
 					"name" : "map_generation",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug",
-		"source" : "C:/Users/ramir/CLionProjects/map_generation"
+		"build" : "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug",
+		"source" : "C:/Users/kr13193/CLionProjects/map_generation"
 	},
 	"version" : 
 	{

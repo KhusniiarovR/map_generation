@@ -11,5 +11,6 @@ elseif(UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -fsanitize=address -fsanitize=undefined")
 endif()
 
-add_executable(map_generation main.cpp)
+add_executable(map_generation main.cpp
+        perlin.h)
 target_link_libraries(map_generation PRIVATE raylib glfw)
