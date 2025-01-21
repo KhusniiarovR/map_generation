@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\map_generation.dir\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\vc140.pdb",
+                "CMakeFiles\\map_generation.dir\\main.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

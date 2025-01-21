@@ -1,0 +1,18 @@
+"C:\Program Files\JetBrains\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -DCMAKE_TOOLCHAIN_FILE=C:\Users\ramir\.vcpkg-clion\vcpkg\scripts\buildsystems\vcpkg.cmake -G Ninja -S C:\Users\ramir\CLionProjects\map_generation -B C:\Users\ramir\CLionProjects\map_generation\cmake-build-debug
+-- Found raylib: C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/debug/lib/raylib.lib
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Configuring done (2.0s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_TOOLCHAIN_FILE
+
+
+-- Build files have been written to: C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug
