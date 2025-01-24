@@ -4,25 +4,25 @@
 #include <string>
 #include <vector>
 
+unsigned a_mult, b_mult, c_mult, offset_x, offset_y, offset_z;
+const int MAP_WIDTH = 4000;
+const int MAP_HEIGHT = 4000;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+const int GRID_SIZE = 400;
+float player_speed = 2.0f;
+
 struct biome {
     std::string name;
     Color color;
 };
 
-
-unsigned a_mult, b_mult, c_mult, offset_x, offset_y, offset_z;
-const int MAP_WIDTH = 2000;
-const int MAP_HEIGHT = 2000;
-const int SCREEN_WIDTH = 1920;
-const int SCREEN_HEIGHT = 1200;
-const int GRID_SIZE = 400;
-
 std::vector<biome> biomes = {
-    {"Valley", {60, 140, 60, 255}},
+    {"Valley", {120, 200, 120, 255}},
     {"Beach", {230, 230, 110, 255}},
     {"Snow", {200, 200, 230, 255}},
     {"Ocean", {0, 105, 148, 255}},
-    {"Forest", {120, 200, 120, 255}}
+    {"Forest", {60, 140, 60, 255}}
 };
 
 biome get_biome(unsigned char temperature, unsigned char humidity) {

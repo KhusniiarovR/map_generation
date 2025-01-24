@@ -7,7 +7,7 @@ events:
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Windows - 10.0.19045 - AMD64
+      The system is: Windows - 10.0.22631 - AMD64
   -
     kind: "message-v1"
     backtrace:
@@ -23,11 +23,11 @@ events:
       
       The output was:
       0
-      Microsoft (R) C/C++ Optimizing Compiler Version 19.41.34120 for x64
-      Copyright (C) Microsoft Corporation.  All rights reserved.
+      Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.41.34123 для x64
+      (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
       
       CMakeCCompilerId.c
-      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Microsoft (R) Incremental Linker Version 14.41.34123.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       /out:CMakeCCompilerId.exe 
@@ -39,7 +39,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/CMakeCCompilerId.exe
+        C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/CMakeCCompilerId.exe
       
   -
     kind: "message-v1"
@@ -51,9 +51,9 @@ events:
     message: |
       Detecting C compiler /showIncludes prefix:
         main.c
-        Note: including file: C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Примечание: включение файла:  C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
         
-      Found prefix "Note: including file: "
+      Found prefix "Примечание: включение файла:  "
   -
     kind: "message-v1"
     backtrace:
@@ -69,11 +69,11 @@ events:
       
       The output was:
       0
-      Microsoft (R) C/C++ Optimizing Compiler Version 19.41.34120 for x64
-      Copyright (C) Microsoft Corporation.  All rights reserved.
+      Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.41.34123 для x64
+      (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
       
       CMakeCXXCompilerId.cpp
-      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Microsoft (R) Incremental Linker Version 14.41.34123.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
       
       /out:CMakeCXXCompilerId.exe 
@@ -85,7 +85,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdCXX/CMakeCXXCompilerId.exe
+        C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdCXX/CMakeCXXCompilerId.exe
       
   -
     kind: "message-v1"
@@ -97,9 +97,9 @@ events:
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
-        Note: including file: C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Примечание: включение файла:  C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
         
-      Found prefix "Note: including file: "
+      Found prefix "Примечание: включение файла:  "
   -
     kind: "try_compile-v1"
     backtrace:
@@ -109,42 +109,25 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ci2way"
-      binary: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ci2way"
+      source: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n1jjom"
+      binary: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n1jjom"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ci2way'
+        Change Dir: 'C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n1jjom'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_f8962\\fast
-        	"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_f8962.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_f8962.dir\\build
-        Building C object CMakeFiles/cmTC_f8962.dir/CMakeCCompilerABI.c.obj
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_f8962.dir\\CMakeCCompilerABI.c.obj.d --working-dir=C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-ci2way --filter-prefix="Note: including file: " -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmC43D.tmp
-        CMakeCCompilerABI.c
-        Linking C executable cmTC_f8962.exe
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_f8962.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_f8962.dir\\objects1.rsp @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmC49C.tmp
-        Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_f8962.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_f8962.dir/embed.manifest
-        RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_f8962.dir/manifest.res CMakeFiles\\cmTC_f8962.dir/manifest.rc
-        LINK Pass 1:
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_f8962.dir\\objects1.rsp /out:cmTC_f8962.exe /implib:cmTC_f8962.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-ci2way\\cmTC_f8962.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_f8962.dir/intermediate.manifest CMakeFiles\\cmTC_f8962.dir/manifest.res
-        MT:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe /nologo /manifest CMakeFiles\\cmTC_f8962.dir/intermediate.manifest /out:CMakeFiles\\cmTC_f8962.dir/embed.manifest /notify_update
-        RC Pass 2:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_f8962.dir/manifest.res CMakeFiles\\cmTC_f8962.dir/manifest.rc
-        FINAL LINK:
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_f8962.dir\\objects1.rsp /out:cmTC_f8962.exe /implib:cmTC_f8962.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-ci2way\\cmTC_f8962.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_f8962.dir/intermediate.manifest CMakeFiles\\cmTC_f8962.dir/manifest.res
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -v cmTC_1fae2
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_1fae2.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_1fae2.dir\\ /FS -c "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_1fae2.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1fae2.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_1fae2.exe /implib:cmTC_1fae2.lib /pdb:cmTC_1fae2.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -173,7 +156,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the C compiler's linker: "C:/PROGRA~1/MIB055~1/2022/COMMUN~1/VC/Tools/MSVC/1441~1.341/bin/Hostx64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Microsoft (R) Incremental Linker Version 14.41.34123.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
@@ -184,43 +167,26 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6wwl6x"
-      binary: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6wwl6x"
+      source: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-b2c0ew"
+      binary: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-b2c0ew"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6wwl6x'
+        Change Dir: 'C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-b2c0ew'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_fc35e\\fast
-        	"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_fc35e.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_fc35e.dir\\build
-        Building CXX object CMakeFiles/cmTC_fc35e.dir/CMakeCXXCompilerABI.cpp.obj
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_fc35e.dir\\CMakeCXXCompilerABI.cpp.obj.d --working-dir=C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-6wwl6x --filter-prefix="Note: including file: " -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmC69F.tmp
-        CMakeCXXCompilerABI.cpp
-        Linking CXX executable cmTC_fc35e.exe
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_fc35e.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_fc35e.dir\\objects1.rsp @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmC70D.tmp
-        Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_fc35e.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_fc35e.dir/embed.manifest
-        RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_fc35e.dir/manifest.res CMakeFiles\\cmTC_fc35e.dir/manifest.rc
-        LINK Pass 1:
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_fc35e.dir\\objects1.rsp /out:cmTC_fc35e.exe /implib:cmTC_fc35e.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-6wwl6x\\cmTC_fc35e.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_fc35e.dir/intermediate.manifest CMakeFiles\\cmTC_fc35e.dir/manifest.res
-        MT:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe /nologo /manifest CMakeFiles\\cmTC_fc35e.dir/intermediate.manifest /out:CMakeFiles\\cmTC_fc35e.dir/embed.manifest /notify_update
-        RC Pass 2:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_fc35e.dir/manifest.res CMakeFiles\\cmTC_fc35e.dir/manifest.rc
-        FINAL LINK:
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_fc35e.dir\\objects1.rsp /out:cmTC_fc35e.exe /implib:cmTC_fc35e.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-6wwl6x\\cmTC_fc35e.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_fc35e.dir/intermediate.manifest CMakeFiles\\cmTC_fc35e.dir/manifest.res
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -v cmTC_b2d6c
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_b2d6c.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_b2d6c.dir\\ /FS -c "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_b2d6c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_b2d6c.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_b2d6c.exe /implib:cmTC_b2d6c.lib /pdb:cmTC_b2d6c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -249,7 +215,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "C:/PROGRA~1/MIB055~1/2022/COMMUN~1/VC/Tools/MSVC/1441~1.341/bin/Hostx64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Microsoft (R) Incremental Linker Version 14.41.34123.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
@@ -258,144 +224,116 @@ events:
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake:2 (find_dependency)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake:2 (find_dependency)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
       - "CMakeLists.txt:7 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-3kletq"
-      binary: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-3kletq"
+      source: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0y7deb"
+      binary: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0y7deb"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-3kletq'
+        Change Dir: 'C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0y7deb'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_5914f\\fast
-        	"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_5914f.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_5914f.dir\\build
-        Building C object CMakeFiles/cmTC_5914f.dir/src.c.obj
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_5914f.dir\\src.c.obj.d --working-dir=C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-3kletq --filter-prefix="Note: including file: " -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmC97D.tmp
-        src.c
-        C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-3kletq\\src.c(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
-        NMAKE : fatal error U1077: '"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_5914f.dir\\src.c.obj.d --working-dir=C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-3kletq --filter-prefix="Note: including file: " -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmC97D.tmp' : return code '0x2'
-        Stop.
-        NMAKE : fatal error U1077: '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_5914f.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_5914f.dir\\build' : return code '0x2'
-        Stop.
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -v cmTC_6fd7b
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_6fd7b.dir\\src.c.obj /FdCMakeFiles\\cmTC_6fd7b.dir\\ /FS -c C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-0y7deb\\src.c
+        FAILED: CMakeFiles/cmTC_6fd7b.dir/src.c.obj 
+        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_6fd7b.dir\\src.c.obj /FdCMakeFiles\\cmTC_6fd7b.dir\\ /FS -c C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-0y7deb\\src.c
+        C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-0y7deb\\src.c(1): fatal error C1083: Не удается открыть файл включение: pthread.h: No such file or directory,
+        ninja: build stopped: subcommand failed.
         
-      exitCode: 2
+      exitCode: 1
   -
     kind: "try_compile-v1"
     backtrace:
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake:2 (find_dependency)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake:2 (find_dependency)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
       - "CMakeLists.txt:7 (find_package)"
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ydyy23"
-      binary: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ydyy23"
+      source: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lz6xtw"
+      binary: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lz6xtw"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg"
     buildResult:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ydyy23'
+        Change Dir: 'C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-lz6xtw'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_554b3\\fast
-        	"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_554b3.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_554b3.dir\\build
-        Building C object CMakeFiles/cmTC_554b3.dir/CheckFunctionExists.c.obj
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_554b3.dir\\CheckFunctionExists.c.obj.d --working-dir=C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-ydyy23 --filter-prefix="Note: including file: " -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmCA58.tmp
-        CheckFunctionExists.c
-        Linking C executable cmTC_554b3.exe
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_554b3.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_554b3.dir\\objects1.rsp @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmCAC6.tmp
-        Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_554b3.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_554b3.dir/embed.manifest
-        RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_554b3.dir/manifest.res CMakeFiles\\cmTC_554b3.dir/manifest.rc
-        LINK Pass 1:
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_554b3.dir\\objects1.rsp /out:cmTC_554b3.exe /implib:cmTC_554b3.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-ydyy23\\cmTC_554b3.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_554b3.dir/intermediate.manifest CMakeFiles\\cmTC_554b3.dir/manifest.res
-        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_554b3.dir\\objects1.rsp /out:cmTC_554b3.exe /implib:cmTC_554b3.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-ydyy23\\cmTC_554b3.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_554b3.dir/intermediate.manifest CMakeFiles\\cmTC_554b3.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib'
-        NMAKE : fatal error U1077: '"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_554b3.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_554b3.dir\\objects1.rsp @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmCAC6.tmp' : return code '0xffffffff'
-        Stop.
-        NMAKE : fatal error U1077: '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_554b3.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_554b3.dir\\build' : return code '0x2'
-        Stop.
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -v cmTC_9c668
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=pthread_create /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_9c668.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_9c668.dir\\ /FS -c C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-lz6xtw\\CheckFunctionExists.c
+        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_9c668.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_9c668.dir\\CheckFunctionExists.c.obj  /out:cmTC_9c668.exe /implib:cmTC_9c668.lib /pdb:cmTC_9c668.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_9c668.exe 
+        C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_9c668.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_9c668.dir\\CheckFunctionExists.c.obj  /out:cmTC_9c668.exe /implib:cmTC_9c668.lib /pdb:cmTC_9c668.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_9c668.dir\\CheckFunctionExists.c.obj /out:cmTC_9c668.exe /implib:cmTC_9c668.lib /pdb:cmTC_9c668.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_9c668.dir/intermediate.manifest CMakeFiles\\cmTC_9c668.dir/manifest.res" failed (exit code 1104) with the following output:
+        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib"\x0d
+        ninja: build stopped: subcommand failed.
         
-      exitCode: 2
+      exitCode: 1
   -
     kind: "try_compile-v1"
     backtrace:
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
       - "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake:2 (find_dependency)"
-      - "C:/Users/kr13193/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/installed/x64-windows/share/glfw3/glfw3Config.cmake:2 (find_dependency)"
+      - "C:/Users/ramir/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)"
       - "CMakeLists.txt:7 (find_package)"
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw831b"
-      binary: "C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw831b"
+      source: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-709yue"
+      binary: "C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-709yue"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      VCPKG_INSTALLED_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg/installed"
+      VCPKG_INSTALLED_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg/installed"
       VCPKG_PREFER_SYSTEM_LIBS: "OFF"
       VCPKG_TARGET_TRIPLET: "x64-windows"
-      Z_VCPKG_ROOT_DIR: "C:/Users/kr13193/.vcpkg-clion/vcpkg"
+      Z_VCPKG_ROOT_DIR: "C:/Users/ramir/.vcpkg-clion/vcpkg"
     buildResult:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kr13193/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw831b'
+        Change Dir: 'C:/Users/ramir/CLionProjects/map_generation/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-709yue'
         
-        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/cmake/win/x64/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_ada75\\fast
-        	"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_ada75.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_ada75.dir\\build
-        Building C object CMakeFiles/cmTC_ada75.dir/CheckFunctionExists.c.obj
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\\cmTC_ada75.dir\\CheckFunctionExists.c.obj.d --working-dir=C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-mw831b --filter-prefix="Note: including file: " -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmCB90.tmp
-        CheckFunctionExists.c
-        Linking C executable cmTC_ada75.exe
-        	"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ada75.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_ada75.dir\\objects1.rsp @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmCBEF.tmp
-        Visual Studio Incremental Link with embedded manifests
-        Create CMakeFiles\\cmTC_ada75.dir/manifest.rc
-        Create empty: CMakeFiles\\cmTC_ada75.dir/embed.manifest
-        RC Pass 1:
-        C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe /fo CMakeFiles\\cmTC_ada75.dir/manifest.res CMakeFiles\\cmTC_ada75.dir/manifest.rc
-        LINK Pass 1:
-        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_ada75.dir\\objects1.rsp /out:cmTC_ada75.exe /implib:cmTC_ada75.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-mw831b\\cmTC_ada75.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_ada75.dir/intermediate.manifest CMakeFiles\\cmTC_ada75.dir/manifest.res
-        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_ada75.dir\\objects1.rsp /out:cmTC_ada75.exe /implib:cmTC_ada75.lib /pdb:C:\\Users\\kr13193\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-mw831b\\cmTC_ada75.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_ada75.dir/intermediate.manifest CMakeFiles\\cmTC_ada75.dir/manifest.res" failed (exit code 1104) with the following output:
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib'
-        NMAKE : fatal error U1077: '"C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_ada75.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo @CMakeFiles\\cmTC_ada75.dir\\objects1.rsp @C:\\Users\\kr13193\\AppData\\Local\\Temp\\nmCBEF.tmp' : return code '0xffffffff'
-        Stop.
-        NMAKE : fatal error U1077: '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\nmake.exe"  -f CMakeFiles\\cmTC_ada75.dir\\build.make /nologo -L                  CMakeFiles\\cmTC_ada75.dir\\build' : return code '0x2'
-        Stop.
+        Run Build Command(s): "C:/Program Files/JetBrains/CLion 2024.2.0.1/bin/ninja/win/x64/ninja.exe" -v cmTC_045f4
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS -DCHECK_FUNCTION_EXISTS=pthread_create /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_045f4.dir\\CheckFunctionExists.c.obj /FdCMakeFiles\\cmTC_045f4.dir\\ /FS -c C:\\Users\\ramir\\CLionProjects\\map_generation\\cmake-build-debug\\CMakeFiles\\CMakeScratch\\TryCompile-709yue\\CheckFunctionExists.c
+        [2/2] C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_045f4.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_045f4.dir\\CheckFunctionExists.c.obj  /out:cmTC_045f4.exe /implib:cmTC_045f4.lib /pdb:cmTC_045f4.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_045f4.exe 
+        C:\\windows\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\JetBrains\\CLion 2024.2.0.1\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_045f4.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_045f4.dir\\CheckFunctionExists.c.obj  /out:cmTC_045f4.exe /implib:cmTC_045f4.lib /pdb:cmTC_045f4.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1441~1.341\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_045f4.dir\\CheckFunctionExists.c.obj /out:cmTC_045f4.exe /implib:cmTC_045f4.lib /pdb:cmTC_045f4.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_045f4.dir/intermediate.manifest CMakeFiles\\cmTC_045f4.dir/manifest.res" failed (exit code 1104) with the following output:
+        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib"\x0d
+        ninja: build stopped: subcommand failed.
         
-      exitCode: 2
+      exitCode: 1
 ...

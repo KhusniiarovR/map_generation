@@ -8,7 +8,7 @@
 int main() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "my map");
     SetTargetFPS(60);
-    ToggleBorderlessWindowed();
+    //ToggleBorderlessWindowed();
     unsigned int seed = time(nullptr);
     srand(seed);
 
@@ -27,25 +27,38 @@ int main() {
 
     Texture2D mapTexture = GenerateMap(map, seed);
 
-    Vector2 cameraOffset = { 0, 0 };
+    Camera2D camera = { 0 };
+    camera.offset = {SCREEN_WIDTH/2, SCREEN_HEIGHT/2};
+    camera.target = {0, 0};
+    camera.zoom = 1.0f;
+    camera.rotation = 0.0f;
+
+    Vector2 player_pos = {0, 0};
 
     while (!WindowShouldClose()) {
-        if (IsKeyDown(KEY_RIGHT)) cameraOffset.x += 10;
-        if (IsKeyDown(KEY_LEFT)) cameraOffset.x -= 10;
-        if (IsKeyDown(KEY_DOWN)) cameraOffset.y += 10;
-        if (IsKeyDown(KEY_UP)) cameraOffset.y -= 10;
+        if (IsKeyDown(KEY_RIGHT)) player_pos.x += 10 * player_speed;
+        if (IsKeyDown(KEY_LEFT)) player_pos.x -= 10 * player_speed;
+        if (IsKeyDown(KEY_DOWN)) player_pos.y += 10 * player_speed;
+        if (IsKeyDown(KEY_UP)) player_pos.y -= 10 * player_speed;
 
+        camera.target = player_pos;
+        if (player_pos.x < 0) player_pos.x = 0;
+        if (player_pos.y < 0) player_pos.y = 0;
+        if (player_pos.x > MAP_WIDTH) player_pos.x = MAP_WIDTH;
+        if (player_pos.y > MAP_HEIGHT) player_pos.y = MAP_HEIGHT;
 
-        if (cameraOffset.x < 0) cameraOffset.x = 0;
-        if (cameraOffset.y < 0) cameraOffset.y = 0;
-        if (cameraOffset.x > MAP_WIDTH - SCREEN_WIDTH) cameraOffset.x = MAP_WIDTH - SCREEN_WIDTH;
-        if (cameraOffset.y > MAP_HEIGHT - SCREEN_HEIGHT) cameraOffset.y = MAP_HEIGHT - SCREEN_HEIGHT;
+        if (IsKeyDown(KEY_Q)) camera.zoom += 0.1f;
+        if (IsKeyDown(KEY_E)) camera.zoom -= 0.1f;
+        if (camera.zoom < 0.1f) camera.zoom = 0.1f;
+        if (camera.zoom > 5.0f) camera.zoom = 5.0f;
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        DrawTextureEx(mapTexture, { -cameraOffset.x, -cameraOffset.y }, 0.0f, 1.0f, WHITE);
+        BeginMode2D(camera);
+        DrawTextureEx(mapTexture, { -camera.offset.x, -camera.offset.y }, 0.0f, 1.0f, WHITE);
 
+        EndMode2D();
         DrawText("Use arrow keys to move", 10, 10, 20, BLACK);
         EndDrawing();
     }
