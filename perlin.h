@@ -4,16 +4,16 @@
 #include <string>
 #include <vector>
 
-#include "perlin.h"
 
 unsigned a_mult, b_mult, c_mult, offset_x, offset_y, offset_z, offset_a;
 const int MAP_WIDTH = 2000;
 const int MAP_HEIGHT = 2000;
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const int GRID_SIZE = 200;
-int map_multiplier = 1;
+const int GRID_SIZE = 300;
 float player_speed = 20.0f;
+const int river_margin = 20;
+const int river_size = 100;
 Color map_shader_collection[3] = {WHITE, {60, 60, 110, 255}, {100, 50, 20, 255}};
 Color map_shader = map_shader_collection[0];
 
@@ -26,7 +26,8 @@ std::vector<biome> biomes = {
     {"Unknown", {255, 0, 0, 255}}, // 0
     {"Beach", {230, 230, 110, 255}}, // 1
     {"Snow", {220, 220, 235, 255}}, // 2
-    {"Ocean", {0, 105, 148, 255}}, // 3
+    //{"Ocean", {0, 105, 148, 255}}, // 3
+    {"Purple", {140, 100, 140, 255}}, // 3
     {"Forest", {60, 140, 60, 255}}, // 4
     {"Taiga", {190, 190, 200, 255}}, // 5
     {"Gray biome", {100, 100, 100, 255}}, // 6
@@ -34,6 +35,7 @@ std::vector<biome> biomes = {
     {"Volcano", {35, 30, 30, 255}}, // 8
     {"Valley", {120, 200, 120, 255}}, // 9
     {"Volcano fire side", {70, 25, 20, 255}}, // 10
+    {"River", {0, 105, 148, 255}} // 11
 };
 
 biome get_biome(unsigned char temperature, unsigned char humidity) {
@@ -60,6 +62,48 @@ biome get_biome(unsigned char temperature, unsigned char humidity) {
 
     return biomes[0];
 }
+
+int get_random_value(int min, int max) {
+    return rand() % (max - min + 1) + min;
+}
+
+void generate_river() {
+    int river_side = get_random_value(1, 4);
+
+    Vector2 start_point, end_point;
+    int start_x = get_random_value(-river_margin, MAP_WIDTH);
+    int start_y = get_random_value(-river_margin, MAP_HEIGHT);
+
+    switch (river_side) {
+        case 1: // up
+            start_point = Vector2(start_x, -river_margin);
+            end_point = Vector2(MAP_WIDTH - start_x, river_margin);
+            break;
+        case 2: // right
+            start_point = Vector2(river_margin, start_y);
+            end_point = Vector2(-river_margin, MAP_HEIGHT - start_y);
+            break;
+        case 3: // down
+            start_point = Vector2(start_x, river_margin);
+            end_point = Vector2(MAP_WIDTH - start_x, -river_margin);
+            break;
+        case 4: // left
+            start_point = Vector2(river_margin, start_y);
+            end_point = Vector2(-river_margin, MAP_HEIGHT - start_y);
+            break;
+    }
+
+    for (int i = 0; i < river_size; i++) {
+        Vector2 dir = {(end_point.x - start_point.x) / river_size, (end_point.y - start_point.y) / river_size};
+        start_point.x += dir.x + get_random_value(-30, 30)/10;
+        start_point.y += dir.y + get_random_value(-30, 30)/10;
+        DrawLineEx(start_point, end_point, 4, BLUE);
+        end_point = start_point;
+    }
+}
+
+
+
 
 
 Vector2 randomGradient(int ix, int iy) {
@@ -162,6 +206,7 @@ Texture2D GenerateMap(int** map) {
             ImageDrawPixel(&image, x, y, biome_current.color);
         }
     }
+
     Texture2D texture = LoadTextureFromImage(image);
     UnloadImage(image);
 
@@ -169,8 +214,8 @@ Texture2D GenerateMap(int** map) {
 }
 
 biome get_biome_current(Vector2 pos) {
-    unsigned char temperature = perlin_generate((pos.x + offset_x) * map_multiplier, (pos.y + offset_y) * map_multiplier);
-    unsigned char humidity = perlin_generate((pos.x + offset_z) * map_multiplier, (pos.y + offset_a) * map_multiplier);
+    unsigned char temperature = perlin_generate(pos.x + offset_x, pos.y + offset_y);
+    unsigned char humidity = perlin_generate(pos.x + offset_z, pos.y + offset_a);
     biome biome_current = get_biome(temperature, humidity);
     return biome_current;
 }

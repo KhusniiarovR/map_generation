@@ -34,7 +34,7 @@ int main() {
     camera.zoom = 5.0f;
     camera.rotation = 0.0f;
 
-    Vector2 player_pos = {(float)MAP_WIDTH * map_multiplier/2, (float)MAP_HEIGHT * map_multiplier/2};
+    Vector2 player_pos = {(float)MAP_WIDTH/2, (float)MAP_HEIGHT/2};
 
     biome current_biome = get_biome_current(player_pos);
 
@@ -56,11 +56,11 @@ int main() {
 
         if (player_pos.x < 0) player_pos.x = 0;
         if (player_pos.y < 0) player_pos.y = 0;
-        if (player_pos.x > MAP_WIDTH * map_multiplier) player_pos.x = MAP_WIDTH * map_multiplier;
-        if (player_pos.y > MAP_HEIGHT * map_multiplier) player_pos.y = MAP_HEIGHT * map_multiplier;
+        if (player_pos.x > MAP_WIDTH) player_pos.x = MAP_WIDTH;
+        if (player_pos.y > MAP_HEIGHT) player_pos.y = MAP_HEIGHT;
 
-        if (IsKeyDown(KEY_Q)) camera.zoom += 0.1f;
-        if (IsKeyDown(KEY_E)) camera.zoom -= 0.1f;
+        if (IsKeyDown(KEY_Q)) camera.zoom += 0.05f;
+        if (IsKeyDown(KEY_E)) camera.zoom -= 0.05f;
         if (camera.zoom < 0.05f) camera.zoom = 0.05f;
         if (camera.zoom > 7.0f) camera.zoom = 7.0f;
 
@@ -68,15 +68,15 @@ int main() {
         ClearBackground(RAYWHITE);
 
         BeginMode2D(camera);
-        DrawTextureEx(mapTexture, {0 ,0}, 0.0f, 1.0f * map_multiplier, map_shader);
+        DrawTextureEx(mapTexture, {0 ,0}, 0.0f, 1.0f, map_shader);
         DrawCircle(player_pos.x, player_pos.y, 10, LIGHTGRAY);
 
         EndMode2D();
 
         current_biome = get_biome_current(player_pos);
         std::string biome_name = "Current biome: " + current_biome.name;
-
         DrawText(biome_name.c_str(), 10, 10, 20, BLACK);
+
         EndDrawing();
     }
 
