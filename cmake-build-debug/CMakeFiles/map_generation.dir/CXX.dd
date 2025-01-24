@@ -1,3 +1,0 @@
-ninja_dyndep_version = 1.0
-build CMakeFiles\map_generation.dir\main.cpp.obj: dyndep
-

@@ -4,13 +4,18 @@
 #include <string>
 #include <vector>
 
-unsigned a_mult, b_mult, c_mult, offset_x, offset_y, offset_z;
-const int MAP_WIDTH = 4000;
-const int MAP_HEIGHT = 4000;
+#include "perlin.h"
+
+unsigned a_mult, b_mult, c_mult, offset_x, offset_y, offset_z, offset_a;
+const int MAP_WIDTH = 2000;
+const int MAP_HEIGHT = 2000;
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const int GRID_SIZE = 400;
-float player_speed = 2.0f;
+const int GRID_SIZE = 200;
+int map_multiplier = 1;
+float player_speed = 20.0f;
+Color map_shader_collection[3] = {WHITE, {60, 60, 110, 255}, {100, 50, 20, 255}};
+Color map_shader = map_shader_collection[0];
 
 struct biome {
     std::string name;
@@ -18,22 +23,43 @@ struct biome {
 };
 
 std::vector<biome> biomes = {
-    {"Valley", {120, 200, 120, 255}},
-    {"Beach", {230, 230, 110, 255}},
-    {"Snow", {200, 200, 230, 255}},
-    {"Ocean", {0, 105, 148, 255}},
-    {"Forest", {60, 140, 60, 255}}
+    {"Unknown", {255, 0, 0, 255}}, // 0
+    {"Beach", {230, 230, 110, 255}}, // 1
+    {"Snow", {220, 220, 235, 255}}, // 2
+    {"Ocean", {0, 105, 148, 255}}, // 3
+    {"Forest", {60, 140, 60, 255}}, // 4
+    {"Taiga", {190, 190, 200, 255}}, // 5
+    {"Gray biome", {100, 100, 100, 255}}, // 6
+    {"Desert", {200, 200, 60, 255}}, // 7
+    {"Volcano", {35, 30, 30, 255}}, // 8
+    {"Valley", {120, 200, 120, 255}}, // 9
+    {"Volcano fire side", {70, 25, 20, 255}}, // 10
 };
 
 biome get_biome(unsigned char temperature, unsigned char humidity) {
-    if (temperature >= 131 && temperature <= 160) { return biomes[0]; }
-    if (temperature >= 123 && temperature <= 130) { return biomes[1]; }
-    if (temperature >= 71 && temperature <= 122) { return biomes[3]; }
-    if (temperature <= 70) { return biomes[2]; }
-    if (temperature >= 161) { return biomes[4]; }
+
+    if (temperature < 80) {
+        if (humidity < 100) { return biomes[2]; }
+        if (humidity < 160) { return biomes[5]; }
+        return biomes[6];
+    }
+
+    if (temperature >= 80 && temperature <= 120) { return biomes[3]; }
+    if (temperature >= 121 && temperature <= 130) { return biomes[1]; }
+
+    if (temperature < 180) {
+        if (humidity < 100) { return biomes[7]; }
+        if (humidity < 200) { return biomes[9]; }
+        return biomes[4];
+    }
+
+    if (temperature <= 255) {
+        if (humidity < 160) { return biomes[8]; }
+        return biomes[10];
+    }
+
+    return biomes[0];
 }
-
-
 
 
 Vector2 randomGradient(int ix, int iy) {
@@ -108,12 +134,12 @@ float perlin(float x, float y) {
 unsigned char perlin_generate(int x, int y) {
     float val = 0;
     float freq = 1;
-    float amp = 1.1;
+    float amp = 1.2;
 
     for (int i = 0; i < 12; i++) {
         val += perlin(x * freq / GRID_SIZE, y * freq / GRID_SIZE) * amp;
-        freq *= 2;
-        amp /= 2;
+        freq *= 1.5;
+        amp *= 0.55f;
     }
 
     val *= 1.2;
@@ -125,16 +151,14 @@ unsigned char perlin_generate(int x, int y) {
     return value;
 }
 
-
-
-Texture2D GenerateMap(int** map, unsigned int seed) {
+Texture2D GenerateMap(int** map) {
     Image image = GenImageColor(MAP_WIDTH, MAP_HEIGHT, WHITE);
     for (int y = 0; y < MAP_HEIGHT; y++) {
         for (int x = 0; x < MAP_WIDTH; x++) {
-            unsigned char temperature = perlin_generate(x, y);
-            //unsigned char humidity = perlin_generate(x, y);
+            unsigned char temperature = perlin_generate(x + offset_x, y + offset_y);
+            unsigned char humidity = perlin_generate(x + offset_z, y + offset_a);
 
-            biome biome_current = get_biome(temperature, temperature);
+            biome biome_current = get_biome(temperature, humidity);
             ImageDrawPixel(&image, x, y, biome_current.color);
         }
     }
@@ -144,8 +168,12 @@ Texture2D GenerateMap(int** map, unsigned int seed) {
     return texture;
 }
 
-
-
+biome get_biome_current(Vector2 pos) {
+    unsigned char temperature = perlin_generate((pos.x + offset_x) * map_multiplier, (pos.y + offset_y) * map_multiplier);
+    unsigned char humidity = perlin_generate((pos.x + offset_z) * map_multiplier, (pos.y + offset_a) * map_multiplier);
+    biome biome_current = get_biome(temperature, humidity);
+    return biome_current;
+}
 
 
 #endif //PERLIN_H
