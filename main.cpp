@@ -3,30 +3,34 @@
 #include <cstdlib>
 #include <ctime>
 #include "perlin.h"
+#include <chrono>
+#include <iostream>
 
 
 int main() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "my map");
     SetTargetFPS(60);
     //ToggleBorderlessWindowed();
+    auto startTime = std::chrono::high_resolution_clock::now();
     unsigned int seed = time(nullptr);
     srand(seed);
-
-    a_mult = rand();
-    b_mult = rand();
-    c_mult = rand();
 
     offset_x = rand() % 10000;
     offset_y = rand() % 10000;
     offset_z = rand() % 10000;
     offset_a = rand() % 10000;
 
-    int** map = new int*[MAP_HEIGHT];
-    for (int i = 0; i < MAP_HEIGHT; i++) {
-        map[i] = new int[MAP_WIDTH];
-    }
 
-    Texture2D mapTexture = GenerateMap(map);
+
+    Texture2D mapTexture = GenerateMap();
+
+    auto endTime = std::chrono::high_resolution_clock::now();
+
+    // Вычисляем разницу во времени
+    std::chrono::duration<float> elapsed = endTime - startTime;
+
+    // Выводим время в консоль
+    std::cout << "Map loaded in: " << elapsed.count() << " seconds" << std::endl;
 
     Camera2D camera = { 0 };
     camera.offset = {SCREEN_WIDTH/2, SCREEN_HEIGHT/2};
@@ -36,7 +40,7 @@ int main() {
 
     Vector2 player_pos = {(float)MAP_WIDTH/2, (float)MAP_HEIGHT/2};
 
-    biome current_biome = get_biome_current(player_pos);
+    biome current_biome = biomes[0];// = get_biome_current(player_pos);
 
     while (!WindowShouldClose()) {
 
@@ -61,32 +65,30 @@ int main() {
 
         if (IsKeyDown(KEY_Q)) camera.zoom += 0.05f;
         if (IsKeyDown(KEY_E)) camera.zoom -= 0.05f;
-        if (camera.zoom < 0.05f) camera.zoom = 0.05f;
-        if (camera.zoom > 7.0f) camera.zoom = 7.0f;
+        if (camera.zoom <= 0.05f) camera.zoom = 0.05f;
+        if (camera.zoom >= 7.0f) camera.zoom = 7.0f;
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         BeginMode2D(camera);
+
         DrawTextureEx(mapTexture, {0 ,0}, 0.0f, 1.0f, map_shader);
         DrawCircle(player_pos.x, player_pos.y, 10, LIGHTGRAY);
 
         EndMode2D();
 
-        current_biome = get_biome_current(player_pos);
+        //current_biome = get_biome_current(player_pos);
         std::string biome_name = "Current biome: " + current_biome.name;
         DrawText(biome_name.c_str(), 10, 10, 20, BLACK);
 
         EndDrawing();
     }
 
-    for (int i = 0; i < MAP_HEIGHT; i++) {
-        delete[] map[i];
-    }
-    delete[] map;
-
     UnloadTexture(mapTexture);
     CloseWindow();
 
     return 0;
 }
+
+// river to map generator, Getimagepixel to get biome

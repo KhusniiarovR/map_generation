@@ -5,12 +5,11 @@
 #include <vector>
 
 
-unsigned a_mult, b_mult, c_mult, offset_x, offset_y, offset_z, offset_a;
-const int MAP_WIDTH = 2000;
-const int MAP_HEIGHT = 2000;
+int offset_x, offset_y, offset_z, offset_a;
+const int MAP_WIDTH = 4000;
+const int MAP_HEIGHT = 4000;
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const int GRID_SIZE = 300;
 float player_speed = 20.0f;
 const int river_margin = 20;
 const int river_size = 100;
@@ -39,7 +38,6 @@ std::vector<biome> biomes = {
 };
 
 biome get_biome(unsigned char temperature, unsigned char humidity) {
-
     if (temperature < 80) {
         if (humidity < 100) { return biomes[2]; }
         if (humidity < 160) { return biomes[5]; }
@@ -63,162 +61,66 @@ biome get_biome(unsigned char temperature, unsigned char humidity) {
     return biomes[0];
 }
 
-int get_random_value(int min, int max) {
-    return rand() % (max - min + 1) + min;
-}
+Color get_biome_color(unsigned char temperature, unsigned char humidity) {
 
-void generate_river() {
-    int river_side = get_random_value(1, 4);
-
-    Vector2 start_point, end_point;
-    int start_x = get_random_value(-river_margin, MAP_WIDTH);
-    int start_y = get_random_value(-river_margin, MAP_HEIGHT);
-
-    switch (river_side) {
-        case 1: // up
-            start_point = Vector2(start_x, -river_margin);
-            end_point = Vector2(MAP_WIDTH - start_x, river_margin);
-            break;
-        case 2: // right
-            start_point = Vector2(river_margin, start_y);
-            end_point = Vector2(-river_margin, MAP_HEIGHT - start_y);
-            break;
-        case 3: // down
-            start_point = Vector2(start_x, river_margin);
-            end_point = Vector2(MAP_WIDTH - start_x, -river_margin);
-            break;
-        case 4: // left
-            start_point = Vector2(river_margin, start_y);
-            end_point = Vector2(-river_margin, MAP_HEIGHT - start_y);
-            break;
+    if (temperature < 80) {
+        if (humidity < 100) { return biomes[2].color; }
+        if (humidity < 160) { return biomes[5].color; }
+        return biomes[6].color;
     }
 
-    for (int i = 0; i < river_size; i++) {
-        Vector2 dir = {(end_point.x - start_point.x) / river_size, (end_point.y - start_point.y) / river_size};
-        start_point.x += dir.x + get_random_value(-30, 30)/10;
-        start_point.y += dir.y + get_random_value(-30, 30)/10;
-        DrawLineEx(start_point, end_point, 4, BLUE);
-        end_point = start_point;
-    }
-}
+    if (temperature >= 80 && temperature <= 120) { return biomes[3].color; }
+    if (temperature >= 121 && temperature <= 130) { return biomes[1].color; }
 
-
-
-
-
-Vector2 randomGradient(int ix, int iy) {
-    // No precomputed gradients mean this works for any number of grid coordinates
-    const unsigned w = 8 * sizeof(unsigned);
-    const unsigned s = w / 2;
-    unsigned a = ix, b = iy;
-    a *= a_mult;  // 3284157443;
-
-    b ^= a << s | a >> w - s;
-    b *= b_mult;  // 1911520717;
-
-    a ^= b << s | b >> w - s;
-    a *= c_mult;  // 2048419325;
-    float random = a * (3.14159265 / ~(~0u >> 1)); // in [0, 2*Pi]
-
-    // Create the vector from the angle
-    Vector2 v;
-    v.x = sin(random);
-    v.y = cos(random);
-
-    return v;
-}
-
-// Computes the dot product of the distance and gradient vectors.
-float dotGridGradient(int ix, int iy, float x, float y) {
-    // Get gradient from integer coordinates
-    Vector2 gradient = randomGradient(ix, iy);
-
-    // Compute the distance vector
-    float dx = x - (float)ix;
-    float dy = y - (float)iy;
-
-    // Compute the dot-product
-    return (dx * gradient.x + dy * gradient.y);
-}
-
-float interpolate(float a0, float a1, float w)
-{
-    return (a1 - a0) * (3.0 - w * 2.0) * w * w + a0;
-}
-
-// Sample Perlin noise at coordinates x, y
-float perlin(float x, float y) {
-
-    // Determine grid cell corner coordinates
-    int x0 = (int)x;
-    int y0 = (int)y;
-    int x1 = x0 + 1;
-    int y1 = y0 + 1;
-
-    // Compute Interpolation weights
-    float sx = x - (float)x0;
-    float sy = y - (float)y0;
-
-    // Compute and interpolate top two corners
-    float n0 = dotGridGradient(x0, y0, x, y);
-    float n1 = dotGridGradient(x1, y0, x, y);
-    float ix0 = interpolate(n0, n1, sx);
-
-    // Compute and interpolate bottom two corners
-    n0 = dotGridGradient(x0, y1, x, y);
-    n1 = dotGridGradient(x1, y1, x, y);
-    float ix1 = interpolate(n0, n1, sx);
-
-    // Final step: interpolate between the two previously interpolated values, now in y
-    float value = interpolate(ix0, ix1, sy);
-
-    return value;
-}
-
-unsigned char perlin_generate(int x, int y) {
-    float val = 0;
-    float freq = 1;
-    float amp = 1.2;
-
-    for (int i = 0; i < 12; i++) {
-        val += perlin(x * freq / GRID_SIZE, y * freq / GRID_SIZE) * amp;
-        freq *= 1.5;
-        amp *= 0.55f;
+    if (temperature < 180) {
+        if (humidity < 100) { return biomes[7].color; }
+        if (humidity < 200) { return biomes[9].color; }
+        return biomes[4].color;
     }
 
-    val *= 1.2;
-
-    if (val > 1.0f) val = 1.0f;
-    else if (val < -1.0f) val = -1.0f;
-
-    int value = (val + 1) * 0.5f * 255;
-    return value;
-}
-
-Texture2D GenerateMap(int** map) {
-    Image image = GenImageColor(MAP_WIDTH, MAP_HEIGHT, WHITE);
-    for (int y = 0; y < MAP_HEIGHT; y++) {
-        for (int x = 0; x < MAP_WIDTH; x++) {
-            unsigned char temperature = perlin_generate(x + offset_x, y + offset_y);
-            unsigned char humidity = perlin_generate(x + offset_z, y + offset_a);
-
-            biome biome_current = get_biome(temperature, humidity);
-            ImageDrawPixel(&image, x, y, biome_current.color);
-        }
+    if (temperature <= 255) {
+        if (humidity < 160) { return biomes[8].color; }
+        return biomes[10].color;
     }
 
-    Texture2D texture = LoadTextureFromImage(image);
-    UnloadImage(image);
+    return biomes[0].color;
+}
+
+Texture2D GenerateMap() {
+    Image image_t = GenImagePerlinNoise(MAP_WIDTH, MAP_HEIGHT, offset_x, offset_y, 15.0f);
+    Image image_h = GenImagePerlinNoise(MAP_WIDTH, MAP_HEIGHT, offset_a, offset_z, 20.0f);
+
+    Image image_comb = GenImageColor(MAP_WIDTH, MAP_HEIGHT, BLACK);
+
+    Color *pixels_t = LoadImageColors(image_t);
+    Color *pixels_h = LoadImageColors(image_h);
+    Color *pixels_comb = LoadImageColors(image_comb);
+
+    for (int i = 0; i < MAP_HEIGHT * MAP_WIDTH; i++) {
+        pixels_comb[i].r = pixels_t[i].r;
+        pixels_comb[i].g = pixels_h[i].r;
+    }
+
+    UnloadImage(image_t);
+    UnloadImage(image_h);
+    UnloadImageColors(pixels_t);
+    UnloadImageColors(pixels_h);
+
+    Texture2D texture = LoadTextureFromImage(image_comb);
+    UpdateTexture(texture, pixels_comb);
+    UnloadImageColors(pixels_comb);
+    UnloadImage(image_comb);
 
     return texture;
 }
 
-biome get_biome_current(Vector2 pos) {
-    unsigned char temperature = perlin_generate(pos.x + offset_x, pos.y + offset_y);
-    unsigned char humidity = perlin_generate(pos.x + offset_z, pos.y + offset_a);
-    biome biome_current = get_biome(temperature, humidity);
-    return biome_current;
-}
+// biome get_biome_current(Vector2 pos) {
+//
+//
+//     biome biome_current = get_biome(temperature, humidity);
+//
+//     return biome_current;
+// }
 
 
 #endif //PERLIN_H
