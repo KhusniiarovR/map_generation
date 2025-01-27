@@ -13,6 +13,9 @@ const int SCREEN_HEIGHT = 600;
 float player_speed = 20.0f;
 const int river_margin = 20;
 const int river_size = 100;
+const int chunk_size = 800;
+bool chunk_active[(MAP_WIDTH / chunk_size) * (MAP_WIDTH / chunk_size)] = {false};
+int grid_size = MAP_WIDTH / chunk_size;
 Color map_shader_collection[3] = {WHITE, {60, 60, 110, 255}, {100, 50, 20, 255}};
 Color map_shader = map_shader_collection[0];
 
@@ -36,6 +39,26 @@ std::vector<biome> biomes = {
     {"Volcano fire side", {70, 25, 20, 255}}, // 10
     {"River", {0, 105, 148, 255}} // 11
 };
+
+void check_active_chunks(Vector2 pos) {
+
+    for (int i = 0; i < grid_size * grid_size; i++) {
+        chunk_active[i] = false;
+    }
+
+    int player_chunk = static_cast<int>(pos.x / chunk_size) + static_cast<int>(pos.y / chunk_size) * grid_size;
+
+    int x = player_chunk % grid_size;
+    int y = player_chunk / grid_size;
+
+    for (int i = -1; i <= 1; i++) {
+        for (int j = -1; j <= 1; j++) {
+            if (j + x > MAP_WIDTH / chunk_size - 1 || j + x < 0) continue;
+            if (i + y > MAP_WIDTH / chunk_size - 1 || y + i < 0) continue;
+            chunk_active[(j + x) + (i + y) * grid_size] = true;
+        }
+    }
+}
 
 biome get_biome(unsigned char temperature, unsigned char humidity) {
     if (temperature < 80) {
@@ -113,14 +136,6 @@ Texture2D GenerateMap() {
 
     return texture;
 }
-
-// biome get_biome_current(Vector2 pos) {
-//
-//
-//     biome biome_current = get_biome(temperature, humidity);
-//
-//     return biome_current;
-// }
 
 
 #endif //PERLIN_H

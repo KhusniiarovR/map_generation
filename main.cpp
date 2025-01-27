@@ -20,16 +20,12 @@ int main() {
     offset_z = rand() % 10000;
     offset_a = rand() % 10000;
 
-
-
-    Texture2D mapTexture = GenerateMap();
+    //Texture2D mapTexture = GenerateMap();
+    Image map_image = GenImageColor(MAP_WIDTH, MAP_HEIGHT, BLACK);
+    Texture2D mapTexture = LoadTextureFromImage(map_image);
 
     auto endTime = std::chrono::high_resolution_clock::now();
-
-    // Вычисляем разницу во времени
     std::chrono::duration<float> elapsed = endTime - startTime;
-
-    // Выводим время в консоль
     std::cout << "Map loaded in: " << elapsed.count() << " seconds" << std::endl;
 
     Camera2D camera = { 0 };
@@ -56,17 +52,25 @@ int main() {
         if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) player_pos.y += player_speed;
         if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W)) player_pos.y -= player_speed;
 
-        camera.target = player_pos;
+        if (player_pos.x < 0.1f) player_pos.x = 0.1f;
+        if (player_pos.y < 0.1f) player_pos.y = 0.1f;
+        if (player_pos.x > MAP_WIDTH - 0.1f) player_pos.x = MAP_WIDTH - 0.1;
+        if (player_pos.y > MAP_HEIGHT - 0.1f) player_pos.y = MAP_HEIGHT - 0.1;
 
-        if (player_pos.x < 0) player_pos.x = 0;
-        if (player_pos.y < 0) player_pos.y = 0;
-        if (player_pos.x > MAP_WIDTH) player_pos.x = MAP_WIDTH;
-        if (player_pos.y > MAP_HEIGHT) player_pos.y = MAP_HEIGHT;
+        camera.target = player_pos;
 
         if (IsKeyDown(KEY_Q)) camera.zoom += 0.05f;
         if (IsKeyDown(KEY_E)) camera.zoom -= 0.05f;
         if (camera.zoom <= 0.05f) camera.zoom = 0.05f;
         if (camera.zoom >= 7.0f) camera.zoom = 7.0f;
+
+        if (IsKeyPressed(KEY_P)) {
+            check_active_chunks(player_pos);
+            for (int i = 0; i < 25; i++) {
+                if (chunk_active[i]) std::cout << i << " ";
+            }
+            std::cout << std::endl;
+        }
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
@@ -78,9 +82,11 @@ int main() {
 
         EndMode2D();
 
-        //current_biome = get_biome_current(player_pos);
         std::string biome_name = "Current biome: " + current_biome.name;
-        DrawText(biome_name.c_str(), 10, 10, 20, BLACK);
+        DrawText(biome_name.c_str(), 10, 10, 20, RED);
+
+        std::string player_pos_current = "Current player position: " + std::to_string(static_cast<int>(player_pos.x)) + ", " + std::to_string(static_cast<int>(player_pos.y));
+        DrawText(player_pos_current.c_str(), 10, 40, 20, RED);
 
         EndDrawing();
     }
