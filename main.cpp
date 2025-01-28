@@ -10,19 +10,19 @@
 int main() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "my map");
     SetTargetFPS(60);
-    //ToggleBorderlessWindowed();
+    ToggleBorderlessWindowed();
     auto startTime = std::chrono::high_resolution_clock::now();
     unsigned int seed = time(nullptr);
     srand(seed);
+
+    unsigned int frame = 0;
 
     offset_x = rand() % 10000;
     offset_y = rand() % 10000;
     offset_z = rand() % 10000;
     offset_a = rand() % 10000;
 
-    //Texture2D mapTexture = GenerateMap();
-    Image map_image = GenImageColor(MAP_WIDTH, MAP_HEIGHT, BLACK);
-    Texture2D mapTexture = LoadTextureFromImage(map_image);
+    Texture2D mapTexture = GenerateMap();
 
     auto endTime = std::chrono::high_resolution_clock::now();
     std::chrono::duration<float> elapsed = endTime - startTime;
@@ -36,9 +36,11 @@ int main() {
 
     Vector2 player_pos = {(float)MAP_WIDTH/2, (float)MAP_HEIGHT/2};
 
-    biome current_biome = biomes[0];// = get_biome_current(player_pos);
+    biome current_biome = biomes[0];
+    check_active_chunks(player_pos);
 
     while (!WindowShouldClose()) {
+        frame++;
 
         if (IsKeyPressed(KEY_LEFT_SHIFT)) { player_speed *= 0.5f; }
         if (IsKeyPressed(KEY_LEFT_CONTROL)) { player_speed *= 2.0f; }
@@ -64,29 +66,29 @@ int main() {
         if (camera.zoom <= 0.05f) camera.zoom = 0.05f;
         if (camera.zoom >= 7.0f) camera.zoom = 7.0f;
 
-        if (IsKeyPressed(KEY_P)) {
-            check_active_chunks(player_pos);
-            for (int i = 0; i < 25; i++) {
-                if (chunk_active[i]) std::cout << i << " ";
-            }
-            std::cout << std::endl;
-        }
+        check_active_chunks(player_pos);
+
+        if (frame % 120 == 0) current_biome = get_biome(player_pos, mapTexture);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
         BeginMode2D(camera);
 
-        DrawTextureEx(mapTexture, {0 ,0}, 0.0f, 1.0f, map_shader);
-        DrawCircle(player_pos.x, player_pos.y, 10, LIGHTGRAY);
+        DrawTextureRec(mapTexture, map_texture_rect, active_chunks_start, map_shader);
+        DrawCircle(player_pos.x, player_pos.y, 3, LIGHTGRAY);
+        DrawLineEx({0,0}, {0, MAP_HEIGHT}, 15, PURPLE);
+        DrawLineEx({0,0}, {MAP_WIDTH, 0}, 15, PURPLE);
+        DrawLineEx({MAP_WIDTH,0}, {MAP_WIDTH, MAP_HEIGHT}, 15, PURPLE);
+        DrawLineEx({0,MAP_HEIGHT}, {MAP_WIDTH, MAP_HEIGHT}, 15, PURPLE);
 
         EndMode2D();
 
         std::string biome_name = "Current biome: " + current_biome.name;
-        DrawText(biome_name.c_str(), 10, 10, 20, RED);
+        DrawText(biome_name.c_str(), 10, 10, 30, RED);
 
         std::string player_pos_current = "Current player position: " + std::to_string(static_cast<int>(player_pos.x)) + ", " + std::to_string(static_cast<int>(player_pos.y));
-        DrawText(player_pos_current.c_str(), 10, 40, 20, RED);
+        DrawText(player_pos_current.c_str(), 10, 50, 30, RED);
 
         EndDrawing();
     }
